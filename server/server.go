@@ -51,7 +51,6 @@ func GrpcServer() *grpc.Server {
 		),
 	)
 
-	//grpcServer := grpc.NewServer()
 	entitypb.RegisterTalentServiceServer(grpcServer, talentService)
 
 	return grpcServer
