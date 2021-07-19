@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package hello;
+option go_package = "./entitypb";
+
+message talentRequest {
+    string id =1;
+    string name =2;
+    int64 age =3;
+    string email =4;
+
+
+}
+message talentResponse {
+    string name =1;
+    string email =2;
+    string token =3;
+
+}
+message ID {
+    string id = 1;
+}
+
+service talentService {
+    rpc AddTalent (talentRequest) returns (talentResponse) {};
+    rpc GetTalent (ID) returns (talentResponse) {};
+}
