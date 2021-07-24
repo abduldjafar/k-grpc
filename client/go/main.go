@@ -37,10 +37,8 @@ func main() {
 	}
 
 	resp, _ := client.AddTalent(context.Background(), request)
-	fmt.Printf("Receive response => [%v]", resp)
 
 	talentData, _ := client.GetTalent(context.Background(), resp)
-	fmt.Printf("Receive Get Talent response => [%v]", talentData)
 
 	talentData.BodySize.BodyType = 190
 	updatedRequest := &entitypb.TalentUpdaterequest{
@@ -66,7 +64,6 @@ func main() {
 	}
 
 	updateData, _ := client.UpdateTalent(context.Background(), updatedRequest)
-	log.Println(updateData)
 
 	deleteTalent, _ := client.DeleteTalent(context.Background(), &entitypb.ID{
 		Id: resp.Id,
@@ -76,6 +73,9 @@ func main() {
 		Limit: 20,
 		Page:  0,
 	})
+	log.Printf("Receive Get Talent response => [%v]", talentData)
+	log.Printf("Receive response => [%v]", resp)
+	log.Println(updateData)
 	log.Println(deleteTalent)
 	log.Println(allTalents)
 
