@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
+
 package hello;
 option go_package = "./entitypb";
 
@@ -56,6 +57,10 @@ message talentResponse {
 
 }
 
+message talentUpdaterequest {
+    ID id =1 ;
+    talentRequest requestsData = 2;
+}
 message successResponses {
     string message = 1;
 }
@@ -72,9 +77,9 @@ message ListTalentsResponses {
     repeated talentResponse listTalents = 1;
 }
 service talentService {
-    rpc AddTalent (talentRequest) returns (successResponses) {};
+    rpc AddTalent (talentRequest) returns (ID) {};
     rpc GetTalent (ID) returns (talentResponse) {};
-    rpc UpdateTalent (talentRequest) returns (successResponses){};
-    rpc DeleteTalent (talentRequest) returns (successResponses){};
+    rpc UpdateTalent (talentUpdaterequest) returns (successResponses){};
+    rpc DeleteTalent (ID) returns (successResponses){};
     rpc GetListTalents (pagination) returns (ListTalentsResponses){};
 }

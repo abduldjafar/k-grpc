@@ -36,14 +36,47 @@ func main() {
 		},
 	}
 
-	requestById := &entitypb.ID{
-		Id: "60fb7524009132101038ef0c",
-	}
-
 	resp, _ := client.AddTalent(context.Background(), request)
 	fmt.Printf("Receive response => [%v]", resp)
 
-	resp2, _ := client.GetTalent(context.Background(), requestById)
-	fmt.Printf("Receive Get Talent response => [%v]", resp2)
+	talentData, _ := client.GetTalent(context.Background(), resp)
+	fmt.Printf("Receive Get Talent response => [%v]", talentData)
+
+	talentData.BodySize.BodyType = 190
+	updatedRequest := &entitypb.TalentUpdaterequest{
+		Id: resp,
+		RequestsData: &entitypb.TalentRequest{
+			Email:            talentData.Email,
+			Name:             "roberto",
+			Address:          talentData.Address,
+			Age:              talentData.Age,
+			BirthDate:        talentData.BirthDate,
+			Gender:           talentData.Gender,
+			Verified:         talentData.Verified,
+			BodySize:         talentData.BodySize,
+			ProductionType:   talentData.ProductionType,
+			Languages:        talentData.Languages,
+			Skills:           []string{"walking beauty"},
+			Keywords:         talentData.Keywords,
+			DataType:         talentData.DataType,
+			PhotoProfile:     talentData.PhotoProfile,
+			Password:         talentData.Password,
+			CodeVerification: talentData.CodeVerification,
+		},
+	}
+
+	updateData, _ := client.UpdateTalent(context.Background(), updatedRequest)
+	log.Println(updateData)
+
+	deleteTalent, _ := client.DeleteTalent(context.Background(), &entitypb.ID{
+		Id: resp.Id,
+	})
+
+	allTalents, _ := client.GetListTalents(context.Background(), &entitypb.Pagination{
+		Limit: 20,
+		Page:  0,
+	})
+	log.Println(deleteTalent)
+	log.Println(allTalents)
 
 }

@@ -478,6 +478,61 @@ func (x *TalentResponse) GetId() string {
 	return ""
 }
 
+type TalentUpdaterequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id           *ID            `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RequestsData *TalentRequest `protobuf:"bytes,2,opt,name=requestsData,proto3" json:"requestsData,omitempty"`
+}
+
+func (x *TalentUpdaterequest) Reset() {
+	*x = TalentUpdaterequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_entitypb_talent_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TalentUpdaterequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TalentUpdaterequest) ProtoMessage() {}
+
+func (x *TalentUpdaterequest) ProtoReflect() protoreflect.Message {
+	mi := &file_entitypb_talent_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TalentUpdaterequest.ProtoReflect.Descriptor instead.
+func (*TalentUpdaterequest) Descriptor() ([]byte, []int) {
+	return file_entitypb_talent_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TalentUpdaterequest) GetId() *ID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *TalentUpdaterequest) GetRequestsData() *TalentRequest {
+	if x != nil {
+		return x.RequestsData
+	}
+	return nil
+}
+
 type SuccessResponses struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -489,7 +544,7 @@ type SuccessResponses struct {
 func (x *SuccessResponses) Reset() {
 	*x = SuccessResponses{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_entitypb_talent_proto_msgTypes[3]
+		mi := &file_entitypb_talent_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -502,7 +557,7 @@ func (x *SuccessResponses) String() string {
 func (*SuccessResponses) ProtoMessage() {}
 
 func (x *SuccessResponses) ProtoReflect() protoreflect.Message {
-	mi := &file_entitypb_talent_proto_msgTypes[3]
+	mi := &file_entitypb_talent_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -515,7 +570,7 @@ func (x *SuccessResponses) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SuccessResponses.ProtoReflect.Descriptor instead.
 func (*SuccessResponses) Descriptor() ([]byte, []int) {
-	return file_entitypb_talent_proto_rawDescGZIP(), []int{3}
+	return file_entitypb_talent_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *SuccessResponses) GetMessage() string {
@@ -536,7 +591,7 @@ type ID struct {
 func (x *ID) Reset() {
 	*x = ID{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_entitypb_talent_proto_msgTypes[4]
+		mi := &file_entitypb_talent_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -549,7 +604,7 @@ func (x *ID) String() string {
 func (*ID) ProtoMessage() {}
 
 func (x *ID) ProtoReflect() protoreflect.Message {
-	mi := &file_entitypb_talent_proto_msgTypes[4]
+	mi := &file_entitypb_talent_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -562,7 +617,7 @@ func (x *ID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ID.ProtoReflect.Descriptor instead.
 func (*ID) Descriptor() ([]byte, []int) {
-	return file_entitypb_talent_proto_rawDescGZIP(), []int{4}
+	return file_entitypb_talent_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ID) GetId() string {
@@ -584,7 +639,7 @@ type Pagination struct {
 func (x *Pagination) Reset() {
 	*x = Pagination{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_entitypb_talent_proto_msgTypes[5]
+		mi := &file_entitypb_talent_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -597,7 +652,7 @@ func (x *Pagination) String() string {
 func (*Pagination) ProtoMessage() {}
 
 func (x *Pagination) ProtoReflect() protoreflect.Message {
-	mi := &file_entitypb_talent_proto_msgTypes[5]
+	mi := &file_entitypb_talent_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -610,7 +665,7 @@ func (x *Pagination) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Pagination.ProtoReflect.Descriptor instead.
 func (*Pagination) Descriptor() ([]byte, []int) {
-	return file_entitypb_talent_proto_rawDescGZIP(), []int{5}
+	return file_entitypb_talent_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Pagination) GetLimit() int64 {
@@ -638,7 +693,7 @@ type ListTalentsResponses struct {
 func (x *ListTalentsResponses) Reset() {
 	*x = ListTalentsResponses{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_entitypb_talent_proto_msgTypes[6]
+		mi := &file_entitypb_talent_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +706,7 @@ func (x *ListTalentsResponses) String() string {
 func (*ListTalentsResponses) ProtoMessage() {}
 
 func (x *ListTalentsResponses) ProtoReflect() protoreflect.Message {
-	mi := &file_entitypb_talent_proto_msgTypes[6]
+	mi := &file_entitypb_talent_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +719,7 @@ func (x *ListTalentsResponses) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTalentsResponses.ProtoReflect.Descriptor instead.
 func (*ListTalentsResponses) Descriptor() ([]byte, []int) {
-	return file_entitypb_talent_proto_rawDescGZIP(), []int{6}
+	return file_entitypb_talent_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListTalentsResponses) GetListTalents() []*TalentResponse {
@@ -763,42 +818,47 @@ var file_entitypb_talent_proto_rawDesc = []byte{
 	0x6f, 0x64, 0x65, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18,
 	0x10, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x43, 0x6f, 0x64, 0x65, 0x56, 0x65, 0x72, 0x69, 0x66,
 	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x11, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2c, 0x0a, 0x10, 0x73, 0x75, 0x63, 0x63, 0x65,
-	0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x14, 0x0a, 0x02, 0x49, 0x44, 0x12, 0x0e, 0x0a, 0x02, 0x69,
-	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x36, 0x0a, 0x0a, 0x70,
-	0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d,
-	0x69, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12,
-	0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x70,
-	0x61, 0x67, 0x65, 0x22, 0x4f, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e,
-	0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x12, 0x37, 0x0a, 0x0b, 0x6c,
-	0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x15, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x0b, 0x6c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c,
-	0x65, 0x6e, 0x74, 0x73, 0x32, 0xc4, 0x02, 0x0a, 0x0d, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a, 0x09, 0x41, 0x64, 0x64, 0x54, 0x61, 0x6c,
-	0x65, 0x6e, 0x74, 0x12, 0x14, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x68, 0x65, 0x6c, 0x6c,
-	0x6f, 0x2e, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x73, 0x22, 0x00, 0x12, 0x2f, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e,
-	0x74, 0x12, 0x09, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x15, 0x2e, 0x68,
+	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x6a, 0x0a, 0x13, 0x74, 0x61, 0x6c, 0x65, 0x6e,
+	0x74, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x19,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x68, 0x65, 0x6c,
+	0x6c, 0x6f, 0x2e, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x38, 0x0a, 0x0c, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x73, 0x44, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x14, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x0c, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x73, 0x44,
+	0x61, 0x74, 0x61, 0x22, 0x2c, 0x0a, 0x10, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x22, 0x14, 0x0a, 0x02, 0x49, 0x44, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x36, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70,
+	0x61, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x22,
+	0x4f, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x12, 0x37, 0x0a, 0x0b, 0x6c, 0x69, 0x73, 0x74, 0x54,
+	0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x68,
 	0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54,
-	0x61, 0x6c, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61,
-	0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x68, 0x65,
-	0x6c, 0x6c, 0x6f, 0x2e, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74,
-	0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x68,
-	0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4c, 0x69,
-	0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x11, 0x2e, 0x68, 0x65, 0x6c, 0x6c,
-	0x6f, 0x2e, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x1a, 0x1b, 0x2e, 0x68,
-	0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x42, 0x0c, 0x5a, 0x0a, 0x2e,
-	0x2f, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x6e, 0x73, 0x65, 0x52, 0x0b, 0x6c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73,
+	0x32, 0xb1, 0x02, 0x0a, 0x0d, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x12, 0x2e, 0x0a, 0x09, 0x41, 0x64, 0x64, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x12,
+	0x14, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x49, 0x44,
+	0x22, 0x00, 0x12, 0x2f, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x12,
+	0x09, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x15, 0x2e, 0x68, 0x65, 0x6c,
+	0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x45, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x61, 0x6c,
+	0x65, 0x6e, 0x74, 0x12, 0x1a, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x74, 0x61, 0x6c, 0x65,
+	0x6e, 0x74, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x17, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x0c, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x12, 0x09, 0x2e, 0x68, 0x65, 0x6c,
+	0x6c, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x17, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x73, 0x75,
+	0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00,
+	0x12, 0x42, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e,
+	0x74, 0x73, 0x12, 0x11, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x70, 0x61, 0x67, 0x69, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x1a, 0x1b, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x54, 0x61, 0x6c, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x73, 0x22, 0x00, 0x42, 0x0c, 0x5a, 0x0a, 0x2e, 0x2f, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79,
+	0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -813,38 +873,41 @@ func file_entitypb_talent_proto_rawDescGZIP() []byte {
 	return file_entitypb_talent_proto_rawDescData
 }
 
-var file_entitypb_talent_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_entitypb_talent_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_entitypb_talent_proto_goTypes = []interface{}{
 	(*BodySizeDataType)(nil),      // 0: hello.BodySizeDataType
 	(*TalentRequest)(nil),         // 1: hello.talentRequest
 	(*TalentResponse)(nil),        // 2: hello.talentResponse
-	(*SuccessResponses)(nil),      // 3: hello.successResponses
-	(*ID)(nil),                    // 4: hello.ID
-	(*Pagination)(nil),            // 5: hello.pagination
-	(*ListTalentsResponses)(nil),  // 6: hello.ListTalentsResponses
-	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
+	(*TalentUpdaterequest)(nil),   // 3: hello.talentUpdaterequest
+	(*SuccessResponses)(nil),      // 4: hello.successResponses
+	(*ID)(nil),                    // 5: hello.ID
+	(*Pagination)(nil),            // 6: hello.pagination
+	(*ListTalentsResponses)(nil),  // 7: hello.ListTalentsResponses
+	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
 var file_entitypb_talent_proto_depIdxs = []int32{
-	7,  // 0: hello.talentRequest.BirthDate:type_name -> google.protobuf.Timestamp
+	8,  // 0: hello.talentRequest.BirthDate:type_name -> google.protobuf.Timestamp
 	0,  // 1: hello.talentRequest.BodySize:type_name -> hello.BodySizeDataType
-	7,  // 2: hello.talentResponse.BirthDate:type_name -> google.protobuf.Timestamp
+	8,  // 2: hello.talentResponse.BirthDate:type_name -> google.protobuf.Timestamp
 	0,  // 3: hello.talentResponse.BodySize:type_name -> hello.BodySizeDataType
-	2,  // 4: hello.ListTalentsResponses.listTalents:type_name -> hello.talentResponse
-	1,  // 5: hello.talentService.AddTalent:input_type -> hello.talentRequest
-	4,  // 6: hello.talentService.GetTalent:input_type -> hello.ID
-	1,  // 7: hello.talentService.UpdateTalent:input_type -> hello.talentRequest
-	1,  // 8: hello.talentService.DeleteTalent:input_type -> hello.talentRequest
-	5,  // 9: hello.talentService.GetListTalents:input_type -> hello.pagination
-	3,  // 10: hello.talentService.AddTalent:output_type -> hello.successResponses
-	2,  // 11: hello.talentService.GetTalent:output_type -> hello.talentResponse
-	3,  // 12: hello.talentService.UpdateTalent:output_type -> hello.successResponses
-	3,  // 13: hello.talentService.DeleteTalent:output_type -> hello.successResponses
-	6,  // 14: hello.talentService.GetListTalents:output_type -> hello.ListTalentsResponses
-	10, // [10:15] is the sub-list for method output_type
-	5,  // [5:10] is the sub-list for method input_type
-	5,  // [5:5] is the sub-list for extension type_name
-	5,  // [5:5] is the sub-list for extension extendee
-	0,  // [0:5] is the sub-list for field type_name
+	5,  // 4: hello.talentUpdaterequest.id:type_name -> hello.ID
+	1,  // 5: hello.talentUpdaterequest.requestsData:type_name -> hello.talentRequest
+	2,  // 6: hello.ListTalentsResponses.listTalents:type_name -> hello.talentResponse
+	1,  // 7: hello.talentService.AddTalent:input_type -> hello.talentRequest
+	5,  // 8: hello.talentService.GetTalent:input_type -> hello.ID
+	3,  // 9: hello.talentService.UpdateTalent:input_type -> hello.talentUpdaterequest
+	5,  // 10: hello.talentService.DeleteTalent:input_type -> hello.ID
+	6,  // 11: hello.talentService.GetListTalents:input_type -> hello.pagination
+	5,  // 12: hello.talentService.AddTalent:output_type -> hello.ID
+	2,  // 13: hello.talentService.GetTalent:output_type -> hello.talentResponse
+	4,  // 14: hello.talentService.UpdateTalent:output_type -> hello.successResponses
+	4,  // 15: hello.talentService.DeleteTalent:output_type -> hello.successResponses
+	7,  // 16: hello.talentService.GetListTalents:output_type -> hello.ListTalentsResponses
+	12, // [12:17] is the sub-list for method output_type
+	7,  // [7:12] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_entitypb_talent_proto_init() }
@@ -890,7 +953,7 @@ func file_entitypb_talent_proto_init() {
 			}
 		}
 		file_entitypb_talent_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SuccessResponses); i {
+			switch v := v.(*TalentUpdaterequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -902,7 +965,7 @@ func file_entitypb_talent_proto_init() {
 			}
 		}
 		file_entitypb_talent_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ID); i {
+			switch v := v.(*SuccessResponses); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -914,7 +977,7 @@ func file_entitypb_talent_proto_init() {
 			}
 		}
 		file_entitypb_talent_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Pagination); i {
+			switch v := v.(*ID); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -926,6 +989,18 @@ func file_entitypb_talent_proto_init() {
 			}
 		}
 		file_entitypb_talent_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Pagination); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_entitypb_talent_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListTalentsResponses); i {
 			case 0:
 				return &v.state
@@ -944,7 +1019,7 @@ func file_entitypb_talent_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_entitypb_talent_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -970,10 +1045,10 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type TalentServiceClient interface {
-	AddTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error)
+	AddTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*ID, error)
 	GetTalent(ctx context.Context, in *ID, opts ...grpc.CallOption) (*TalentResponse, error)
-	UpdateTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error)
-	DeleteTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error)
+	UpdateTalent(ctx context.Context, in *TalentUpdaterequest, opts ...grpc.CallOption) (*SuccessResponses, error)
+	DeleteTalent(ctx context.Context, in *ID, opts ...grpc.CallOption) (*SuccessResponses, error)
 	GetListTalents(ctx context.Context, in *Pagination, opts ...grpc.CallOption) (*ListTalentsResponses, error)
 }
 
@@ -985,8 +1060,8 @@ func NewTalentServiceClient(cc grpc.ClientConnInterface) TalentServiceClient {
 	return &talentServiceClient{cc}
 }
 
-func (c *talentServiceClient) AddTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error) {
-	out := new(SuccessResponses)
+func (c *talentServiceClient) AddTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*ID, error) {
+	out := new(ID)
 	err := c.cc.Invoke(ctx, "/hello.talentService/AddTalent", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1003,7 +1078,7 @@ func (c *talentServiceClient) GetTalent(ctx context.Context, in *ID, opts ...grp
 	return out, nil
 }
 
-func (c *talentServiceClient) UpdateTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error) {
+func (c *talentServiceClient) UpdateTalent(ctx context.Context, in *TalentUpdaterequest, opts ...grpc.CallOption) (*SuccessResponses, error) {
 	out := new(SuccessResponses)
 	err := c.cc.Invoke(ctx, "/hello.talentService/UpdateTalent", in, out, opts...)
 	if err != nil {
@@ -1012,7 +1087,7 @@ func (c *talentServiceClient) UpdateTalent(ctx context.Context, in *TalentReques
 	return out, nil
 }
 
-func (c *talentServiceClient) DeleteTalent(ctx context.Context, in *TalentRequest, opts ...grpc.CallOption) (*SuccessResponses, error) {
+func (c *talentServiceClient) DeleteTalent(ctx context.Context, in *ID, opts ...grpc.CallOption) (*SuccessResponses, error) {
 	out := new(SuccessResponses)
 	err := c.cc.Invoke(ctx, "/hello.talentService/DeleteTalent", in, out, opts...)
 	if err != nil {
@@ -1032,10 +1107,10 @@ func (c *talentServiceClient) GetListTalents(ctx context.Context, in *Pagination
 
 // TalentServiceServer is the server API for TalentService service.
 type TalentServiceServer interface {
-	AddTalent(context.Context, *TalentRequest) (*SuccessResponses, error)
+	AddTalent(context.Context, *TalentRequest) (*ID, error)
 	GetTalent(context.Context, *ID) (*TalentResponse, error)
-	UpdateTalent(context.Context, *TalentRequest) (*SuccessResponses, error)
-	DeleteTalent(context.Context, *TalentRequest) (*SuccessResponses, error)
+	UpdateTalent(context.Context, *TalentUpdaterequest) (*SuccessResponses, error)
+	DeleteTalent(context.Context, *ID) (*SuccessResponses, error)
 	GetListTalents(context.Context, *Pagination) (*ListTalentsResponses, error)
 }
 
@@ -1043,16 +1118,16 @@ type TalentServiceServer interface {
 type UnimplementedTalentServiceServer struct {
 }
 
-func (*UnimplementedTalentServiceServer) AddTalent(context.Context, *TalentRequest) (*SuccessResponses, error) {
+func (*UnimplementedTalentServiceServer) AddTalent(context.Context, *TalentRequest) (*ID, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddTalent not implemented")
 }
 func (*UnimplementedTalentServiceServer) GetTalent(context.Context, *ID) (*TalentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTalent not implemented")
 }
-func (*UnimplementedTalentServiceServer) UpdateTalent(context.Context, *TalentRequest) (*SuccessResponses, error) {
+func (*UnimplementedTalentServiceServer) UpdateTalent(context.Context, *TalentUpdaterequest) (*SuccessResponses, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTalent not implemented")
 }
-func (*UnimplementedTalentServiceServer) DeleteTalent(context.Context, *TalentRequest) (*SuccessResponses, error) {
+func (*UnimplementedTalentServiceServer) DeleteTalent(context.Context, *ID) (*SuccessResponses, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTalent not implemented")
 }
 func (*UnimplementedTalentServiceServer) GetListTalents(context.Context, *Pagination) (*ListTalentsResponses, error) {
@@ -1100,7 +1175,7 @@ func _TalentService_GetTalent_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 func _TalentService_UpdateTalent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TalentRequest)
+	in := new(TalentUpdaterequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1112,13 +1187,13 @@ func _TalentService_UpdateTalent_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: "/hello.talentService/UpdateTalent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TalentServiceServer).UpdateTalent(ctx, req.(*TalentRequest))
+		return srv.(TalentServiceServer).UpdateTalent(ctx, req.(*TalentUpdaterequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _TalentService_DeleteTalent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TalentRequest)
+	in := new(ID)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1130,7 +1205,7 @@ func _TalentService_DeleteTalent_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: "/hello.talentService/DeleteTalent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TalentServiceServer).DeleteTalent(ctx, req.(*TalentRequest))
+		return srv.(TalentServiceServer).DeleteTalent(ctx, req.(*ID))
 	}
 	return interceptor(ctx, in, info, handler)
 }
