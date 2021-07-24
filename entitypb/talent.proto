@@ -1,27 +1,80 @@
 syntax = "proto3";
+import "google/protobuf/timestamp.proto";
 
 package hello;
 option go_package = "./entitypb";
 
+message BodySizeDataType {
+    int32   Height      = 1;  
+	int32  	Bust        = 2;     
+	int32 	Waist       = 3;     
+	int32	Hips        = 4;       
+	int32  	BodyType    = 5;   
+	string 	HairType    = 6;
+	string	HairColor   = 7; 
+	string	EyesColor   = 8;
+	int32  	ShoesSize   = 9 ; 
+}
 message talentRequest {
-    string id =1;
-    string name =2;
-    int64 age =3;
-    string email =4;
+    string  email                               = 1;  
+	string  Name                                = 2;     
+	string  Address                             = 3; 
+	int32   Age                                 = 4;
+	google.protobuf.Timestamp  BirthDate        = 5;
+	string  Gender                              = 6;
+	bool    Verified                            = 7;
+    BodySizeDataType BodySize                   = 8;
+    repeated string ProductionType              = 9;
+    repeated string Languages                   = 10;   
+	repeated string Skills                      = 11;
+	repeated string Keywords                    = 12;
+    string  DataType                            = 13;   
+	string  PhotoProfile                        = 14; 
+	string  Password                            = 15;    
+	string  CodeVerification                    = 16; 
 
 
 }
 message talentResponse {
-    string name =1;
-    string email =2;
-    string token =3;
+    string  email                               = 1;  
+	string  Name                                = 2;     
+	string  Address                             = 3; 
+	int32   Age                                 = 4;
+	google.protobuf.Timestamp  BirthDate        = 5;
+	string  Gender                              = 6;
+	bool    Verified                            = 7;
+    BodySizeDataType BodySize                   = 8;
+    repeated string ProductionType              = 9;
+    repeated string Languages                   = 10;   
+	repeated string Skills                      = 11;
+	repeated string Keywords                    = 12;
+    string  DataType                            = 13;   
+	string  PhotoProfile                        = 14; 
+	string  Password                            = 15;    
+	string  CodeVerification                    = 16; 
+    string  id                                  = 17; 
 
+}
+
+message successResponses {
+    string message = 1;
 }
 message ID {
     string id = 1;
 }
 
+message pagination {
+    int64   limit   = 2;
+    int64   page    = 3;
+}
+
+message ListTalentsResponses {
+    repeated talentResponse listTalents = 1;
+}
 service talentService {
-    rpc AddTalent (talentRequest) returns (talentResponse) {};
+    rpc AddTalent (talentRequest) returns (successResponses) {};
     rpc GetTalent (ID) returns (talentResponse) {};
+    rpc UpdateTalent (talentRequest) returns (successResponses){};
+    rpc DeleteTalent (talentRequest) returns (successResponses){};
+    rpc GetListTalents (pagination) returns (ListTalentsResponses){};
 }

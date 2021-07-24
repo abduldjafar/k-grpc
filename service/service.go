@@ -4,7 +4,6 @@ import (
 	"context"
 	"k-grpc/entitypb"
 	"k-grpc/repository"
-	"log"
 )
 
 type grpcTalent struct{}
@@ -13,19 +12,14 @@ var (
 	repo repository.Repository = repository.NewMongoRepository()
 )
 
-func (*grpcTalent) AddTalent(ctx context.Context, request *entitypb.TalentRequest) (*entitypb.TalentResponse, error) {
-	data := map[string]interface{}{}
+func (*grpcTalent) AddTalent(ctx context.Context, request *entitypb.TalentRequest) (*entitypb.SuccessResponses, error) {
 
-	data["age"] = request.Age
-	data["email"] = request.Email
-	data["name"] = request.Name
-
-	if err := repo.Save(data); err != nil {
-		return &entitypb.TalentResponse{}, err
+	if err := repo.Save(request); err != nil {
+		return nil, err
 	}
 
-	response := &entitypb.TalentResponse{
-		Email: request.Email,
+	response := &entitypb.SuccessResponses{
+		Message: "success",
 	}
 
 	return response, nil
@@ -40,16 +34,18 @@ func (*grpcTalent) GetTalent(ctx context.Context, request *entitypb.ID) (*entity
 		return &entitypb.TalentResponse{}, err
 	}
 
-	datas := data.(map[string]interface{})
-
-	log.Println(datas)
-
-	response := &entitypb.TalentResponse{
-		Email: datas["email"].(string),
-	}
-	return response, nil
+	return data, nil
 }
 
+func (*grpcTalent) UpdateTalent(ctx context.Context, request *entitypb.TalentRequest) (*entitypb.SuccessResponses, error) {
+	return &entitypb.SuccessResponses{}, nil
+}
+func (*grpcTalent) DeleteTalent(ctx context.Context, request *entitypb.TalentRequest) (*entitypb.SuccessResponses, error) {
+	return &entitypb.SuccessResponses{}, nil
+}
+func (*grpcTalent) GetListTalents(ctx context.Context, request *entitypb.Pagination) (*entitypb.ListTalentsResponses, error) {
+	return &entitypb.ListTalentsResponses{}, nil
+}
 func NewTalentService() entitypb.TalentServiceServer {
 	return &grpcTalent{}
 }

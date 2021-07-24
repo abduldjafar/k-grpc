@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"k-grpc/config"
+	"k-grpc/entitypb"
 	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -26,8 +27,8 @@ func (*mongoRepository) Save(params ...interface{}) error {
 	return nil
 }
 
-func (*mongoRepository) GetByID(params ...interface{}) (interface{}, error) {
-	var data map[string]interface{}
+func (*mongoRepository) GetByID(params ...interface{}) (*entitypb.TalentResponse, error) {
+	var data *entitypb.TalentResponse
 
 	id := params[0].(string)
 
